@@ -55,12 +55,13 @@ The Hollandse Luchten (HoLu) network consists of citizen-operated particulate-ma
 | `pm25_raw` | float | µg/m³ | Measured PM2.5 concentration (raw sensor value). |
 | `pm10_raw` | float | µg/m³ | Measured PM10 concentration (raw sensor value). |
 | `pm25_kal` | float | µg/m³ | **Calibrated** PM2.5 concentration ([RIVM calibration method](https://www.samenmeten.nl/dataportaal/kalibratie-van-fijnstofsensoren)). |
-| `pm10_kal` | float | µg/m³ | **Calibrated** PM10 concentration ([RIVM calibration method](https://www.samenmeten.nl/dataportaal/kalibratie-van-fijnstofsensoren)). |
 | `temp` | float | °C | Measured ambient air temperature. |
 | `rh` | float | % | Measured relative humidity. |
 | `pres` | float | hPa | Measured atmospheric pressure. |
 | `latitude` | float | degrees | Latitude of the sensor, WGS84. |
 | `longitude` | float | degrees | Longitude of the sensor, WGS84. |
+
+> The Zenodo `data_sensors.parquet` archive includes `pm10_raw` but does **not** include a `pm10_kal` column. 
 
 ---
 
@@ -158,7 +159,7 @@ Notes:
 | **Missing values** | Be aware that the data files (as any data) contain missing values. These can be empty fields and/or specific codes. |
 | **Special wind values** | KNMI `DD`: `0` = calm, `990` = variable. Wind direction is where the wind comes **from**. |
 | **Location** | For all sensors be aware that locations can change in the course of time.|
-| **Raw vs. calibrated** | `pm25_kal` and `pm10_kal` are calibrated by RIVM, `pm25_raw` and `pm10_raw` are the raw sensor output. Make a well-considered choice which one you make and clearly state. |
+| **Raw vs. calibrated** | The Zenodo sensor archive contains `pm25_kal` alongside `pm25_raw` and `pm10_raw`; it has no `pm10_kal` column. Do not assume calibrated PM10 is available in this sensor dataset. |
 | **Sensor types** | Different PM sensor hardware behaves differently. |
 | **PM10** | Low-cost sensors cannot measure PM10 reliably; treat as indicative. |
 | **Negative and extreme values** | Both occur in sensor data and (small negatives) in reference data. Peaks > 100 µg/m³ are usually artefacts, except for events like New Year's fireworks. |
