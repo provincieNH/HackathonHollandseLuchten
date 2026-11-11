@@ -149,6 +149,21 @@ Notes:
 - **Structure of `beschrijving`:** it contains the context of the question (why the resident wants to know this) and, for some questions, an expert answer that starts with `Antwoord:`.
 
 ---
+### 5b. Participatief opschonen – citizen labels
+
+The CSV submissions from the *Participatief opschonen* test are stored under [`data/labeled_data/`](../data/Labeled%20data/), grouped into date-named folders. In this test, residents reviewed algorithmically flagged measurements from a two-week period and indicated whether each flag was justified. The files are semicolon-delimited and use a long format: each row contains one piece of submission metadata, one survey answer, one assessment, or one explanation.
+
+| Column | Type | Description |
+|---|---|---|
+| `device_id` | string | Identifier included with the submission; |
+| `category` | string | Row type: `meta` (submission metadata), `vraag` (survey answer), `algoritme_beoordeling` (assessment of a flagged item), or `algoritme_toelichting` (free-text explanation of an assessment). |
+| `key` | string | Field name for metadata and survey answers (for example `submitted_at` or `sensor_thuis`); for algorithm assessments and explanations, the item number. |
+| `value` | string | Submission timestamp, survey answer, assessment label (`terecht`, `onterecht`, or `weet-niet`), or explanation text, depending on `category`. |
+| `context` | string | The survey question text or the flagged item description, including the algorithm reason, time interval, and PM value(s). Empty when there is no additional context. |
+
+Each participant submission is a separate CSV file. For `algoritme_beoordeling`, `terecht` means the participant considers the algorithm's flag justified, while `onterecht` means they consider it unjustified; these are participant judgments, not ground-truth measurement labels. An `algoritme_toelichting` row uses the same item number in `key` to associate an explanation with its assessment.
+
+---
 
 ## 6. Conventions and pitfalls
 

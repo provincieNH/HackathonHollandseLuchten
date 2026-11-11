@@ -36,27 +36,28 @@ Build an intelligent assistant that helps residents analyse, understand and inte
 > As with any data and/or AI related challenge, understanding the domain, hardware and user needs you are working with are crucial for a successful solution. Therefore, we strongly encourage you to read the relevant background information and resources we have put here: [Relevant resources](./docs/resources.md).
 
 ## Data
-During the hackathon the data is supplied on [Zenodo](https://zenodo.org/). All data is open and originates from public sources, so no registration or API key is needed to use it.
+The reference-station, weather and resident-question files are included in `data/`. The Hollandse Luchten sensor tables are distributed separately through Zenodo and are **not included in this repository**. All data is open; no registration or API key is needed to use it.
 
 > [!WARNING]
-> The Hollandse Luchten sensor data will be supplied for download **on the day** of the Hackathon. This will be available through the Zenodo link: *to be added*.
-> The data from the reference stations (Luchtmeetnet) and the weather data (KNMI) are available for download and inspection in the folder /data.
+> Before running the sensor-based demos, download `data_sensors.parquet` and `metadata_sensors.parquet` from the Zenodo record and put both files in the local `data/` folder. **Zenodo record link: add before publishing this repository.**
+> Reference measurements, reference-station metadata, KNMI weather, and resident questions are already available in `data/`.
 
 ### Which data is available?
-We supply four datasets, delivered as six tables. **The full column-by-column description of every table is in [Data description](./docs/data.md).**
+We supply five datasets: six structured tables and a collection of labeled-data CSV submissions. **The full column-by-column description of every table is in [Data description](./docs/data.md).**
 
 | # | Dataset | Tables | What it contains |
 |---|---|---|---|
-| 1 | **Hollandse Luchten sensors** | `metadata_sensors`, `data_sensors` | Sensor hardware per kit, and per measurement interval (UTC start/end) the location, raw PM2.5 / PM10, calibrated PM2.5, temperature, relative humidity and pressure of the citizen sensors. The supplied `data_sensors.parquet` has no calibrated PM10 column. |
+| 1 | **Hollandse Luchten sensors** | `metadata_sensors`, `data_sensors` (Zenodo download; not in this repo) | Sensor hardware per kit, and per measurement interval (UTC start/end) the location, raw PM2.5 / PM10, calibrated PM2.5, temperature, relative humidity and pressure of the citizen sensors. The sensor archive has no calibrated PM10 column. |
 | 2 | **Official reference measurements** | `reference_station_metadata` in `data/reference_station_metadata.csv`, `reference_measurements` in `data/reference_measurements.parquet` | 96 official Luchtmeetnet stations with location, area type and station type, plus their hourly PM10 and PM2.5 from 2020 to September 2026. |
 | 3 | **Weather data (KNMI)** | `weather_hourly` in `data/knmi_weather_data.parquet` | Station location, and hourly wind direction, wind speed, temperature and relative humidity from KNMI stations. Only wind speed is an hourly mean; temperature, humidity and wind direction are indicative values at the end of the hour. |
 | 4 | **Resident questions** | `resident_questions` in `data/resident_questions.csv` | 74 real questions (Dutch) residents have about their air quality, with location, date, a description and for some an answer. |
+| 5 | **Labeled data from Participatief opschonen** | `Semicolon-delimited CSV submissions` in `data/labeled_data/` | Residents' survey answers and assessments of algorithmically flagged measurements from a two-week period, including explanations and resident-reported anomalies. These assessments reflect participants' judgments, not ground-truth labels. |
 
 > [!TIP]
 > Read the [conventions and pitfalls](./docs/data.md#6-conventions-and-pitfalls) before you start: time zones (sensors UTC, Luchtmeetnet fixed UTC+1), hour labelling (start vs. end), missing values, wind-direction codes and sensors without a location are the most common sources of errors.
 
 ### Looking at the data before the hackathon
-The sources behind the data are public. You can explore the same data on the [Hollandse Luchten map](https://hollandse-luchten.org/kaart/), in the [Samen Analyseren Tool](https://analyseren.samenmeten.nl/), via the [Samen Meten API](https://api-samenmeten.rivm.nl/v1.0) and the [Luchtmeetnet API](https://api.luchtmeetnet.nl/open_api).
+The sources behind the data are public. You can explore the same data on the [Hollandse Luchten map](https://hollandse-luchten.org/kaart/), in the [Samen Analyseren Tool](https://analyseren.samenmeten.nl/), via the [Samen Meten API](https://api-samenmeten.rivm.nl/v1.0) and the [Luchtmeetnet API](https://api.luchtmeetnet.nl/open_api). The datasets provided have been prepared for the hackathon. You are also welcome to use the APIs instead. 
 
 ## Deliverables
 
