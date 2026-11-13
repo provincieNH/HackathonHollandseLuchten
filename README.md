@@ -39,7 +39,7 @@ Build an intelligent assistant that helps residents analyse, understand and inte
 The reference-station, weather and resident-question files are included in `data/`. The Hollandse Luchten sensor tables are distributed separately through Zenodo and are **not included in this repository**. All data is open; no registration or API key is needed to use it.
 
 > [!WARNING]
-> Before running the sensor-based demos, download `data_sensors.parquet` and `metadata_sensors.parquet` from the Zenodo record and put both files in the local `data/` folder. **Zenodo record link: add before publishing this repository.**
+> Before running the sensor-based demos, download `data_sensors.parquet` and `metadata_sensors.parquet` from the Zenodo record and put both files in the local `data/` folder. **Zenodo record link: [Zenodo link](https://zenodo.org/records/23762846).**
 > Reference measurements, reference-station metadata, KNMI weather, and resident questions are already available in `data/`.
 
 ### Which data is available?
