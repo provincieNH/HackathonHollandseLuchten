@@ -47,7 +47,7 @@ We supply five datasets: six structured tables and a collection of labeled-data 
 
 | # | Dataset | Tables | What it contains |
 |---|---|---|---|
-| 1 | **Hollandse Luchten sensors** | `metadata_sensors`, `data_sensors` (Zenodo download; not in this repo) | Sensor hardware per kit, and per measurement interval (UTC start/end) the location, raw PM2.5 / PM10, calibrated PM2.5, temperature, relative humidity and pressure of the citizen sensors. The sensor archive has no calibrated PM10 column. |
+| 1 | **Hollandse Luchten sensors** | `metadata_sensors`, `data_sensors` (Zenodo download; https://zenodo.org/records/23762846) | Sensor hardware per kit, and per measurement interval (UTC start/end) the location, raw PM2.5 / PM10, calibrated PM2.5, temperature, relative humidity and pressure of the citizen sensors. The sensor archive has no calibrated PM10 column. |
 | 2 | **Official reference measurements** | `reference_station_metadata` in `data/reference_station_metadata.csv`, `reference_measurements` in `data/reference_measurements.parquet` | 96 official Luchtmeetnet stations with location, area type and station type, plus their hourly PM10 and PM2.5 from 2020 to September 2026. |
 | 3 | **Weather data (KNMI)** | `weather_hourly` in `data/knmi_weather_data.parquet` | Station location, and hourly wind direction, wind speed, temperature and relative humidity from KNMI stations. Only wind speed is an hourly mean; temperature, humidity and wind direction are indicative values at the end of the hour. |
 | 4 | **Resident questions** | `resident_questions` in `data/resident_questions.csv` | 74 real questions (Dutch) residents have about their air quality, with location, date, a description and for some an answer. |
