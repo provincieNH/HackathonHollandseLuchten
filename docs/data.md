@@ -18,8 +18,8 @@ This page describes every dataset that is supplied for the hackathon: what it co
 
 | # | Dataset | Table | Granularity | Original source |
 |---|---|---|---|---|
-| 1 | Hollandse Luchten sensors | `metadata_sensors` | one row per sensor kit | Hollandse Luchten / RIVM, supplied via Zenodo |
-| 1 | Hollandse Luchten sensors | `data_sensors` | one row per sensor kit × measurement interval | Hollandse Luchten / RIVM, supplied via Zenodo |
+| 1 | Hollandse Luchten sensors | `metadata_sensors` | one row per sensor kit | Hollandse Luchten / RIVM, supplied via Zenodo https://zenodo.org/records/23762846 |
+| 1 | Hollandse Luchten sensors | `data_sensors` | one row per sensor kit × measurement interval | Hollandse Luchten / RIVM, supplied via Zenodo https://zenodo.org/records/23762846 |
 | 2 | Official reference stations | `reference_station_metadata` (`data/reference_station_metadata.csv`) | one row per station (96 stations) | [Luchtmeetnet metadata files](https://data.rivm.nl/data/luchtmeetnet/Metadata/) |
 | 2 | Official reference stations | `reference_measurements` (`data/reference_measurements.parquet`) | one row per station × component × hour (PM10 and PM2.5, 2020 – September 2026, fixed UTC+1) | [Luchtmeetnet open data](https://data.rivm.nl/data/luchtmeetnet/) (validated 2020–2025, provisional 2026) |
 | 3 | Weather | `weather_hourly` (`data/knmi_weather_data.parquet`) | one row per KNMI station × hour (UTC, end of the hour) | [KNMI hourly in-situ observations (validated)](https://dataplatform.knmi.nl/dataset/hourly-in-situ-meteorological-observations-validated-1-0), NetCDF |
